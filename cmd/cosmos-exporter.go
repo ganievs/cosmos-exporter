@@ -4,6 +4,7 @@ import (
 	"cosmos-exporter/pkg"
 	"cosmos-exporter/pkg/config"
 	"cosmos-exporter/pkg/logger"
+	"fmt"
 	"net/http"
 )
 
@@ -13,6 +14,7 @@ func main() {
 		logger.GetDefaultLogger().Fatal().Err(err).Msg("Could not load config")
 	}
 
+	fmt.Println(config)
 	log := logger.GetLogger(config)
 	app := pkg.NewApp(log, config)
 

@@ -5,9 +5,9 @@ import (
 )
 
 type Config struct {
-	ListenAddress string `mapstructure:"LISTEN_ADDRESS" default:":9000"`
-	LogLevel      string `mapstructure:"LOG_LEVEL" default:"info"`
-	JSONOutput    bool   `mapstructure:"JSON" default:"false"`
+	ListenAddress string `mapstructure:"LISTEN_ADDRESS"`
+	LogLevel      string `mapstructure:"LOG_LEVEL"`
+	JSONOutput    bool   `mapstructure:"JSON"`
 	TendermintRPC string `mapstructure:"TENDERMINT_RPC"`
 }
 
@@ -16,15 +16,11 @@ func LoadConfig() (*Config, error) {
 	viper.SetConfigFile(".env")
 
 	viper.AutomaticEnv()
-
-	err := viper.ReadInConfig()
-	if err != nil {
-		return nil, err
-	}
+	viper.ReadInConfig()
 
 	var configStruct Config
 
-	err = viper.Unmarshal(&configStruct)
+	err := viper.Unmarshal(&configStruct)
 	if err != nil {
 		return nil, err
 	}
