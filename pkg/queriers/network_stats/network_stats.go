@@ -22,7 +22,7 @@ func NewNetworkStatsQuerier(logger *zerolog.Logger, tendermintRPC *tendermint.Te
 }
 
 func (n *NetworkStatsQuerier) Name() string {
-	return "gaia-stats-querier"
+	return "network-stats-querier"
 }
 
 func (n *NetworkStatsQuerier) Get() ([]prometheus.Collector, []query_info.QueryInfo) {

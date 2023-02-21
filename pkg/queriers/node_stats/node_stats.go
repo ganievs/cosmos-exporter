@@ -23,7 +23,7 @@ func NewNodeStatsQuerier(logger *zerolog.Logger, tendermintRPC *tendermint.Tende
 }
 
 func (n *NodeStatsQuerier) Name() string {
-	return "gaia-stats-querier"
+	return "node-stats-querier"
 }
 
 func (n *NodeStatsQuerier) Get() ([]prometheus.Collector, []query_info.QueryInfo) {
