@@ -1,0 +1,14 @@
+[Unit]
+Description=Cosmos Exporter
+After=network-online.target
+
+[Service]
+User=gaia
+TimeoutStartSec=0
+ExecStart=cosmos-exporter
+Restart=always
+RestartSec=2
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target
