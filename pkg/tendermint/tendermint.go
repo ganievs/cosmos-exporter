@@ -7,7 +7,7 @@ import (
 	"github.com/rs/zerolog"
 
 	rpcClient "github.com/tendermint/tendermint/rpc/client/http"
-	"github.com/tendermint/tendermint/rpc/coretypes"
+	coretypes "github.com/tendermint/tendermint/rpc/core/types"
 )
 
 type TendermintRPC struct {
