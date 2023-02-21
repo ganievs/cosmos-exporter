@@ -17,7 +17,7 @@ type TendermintRPC struct {
 }
 
 func NewTendermintRPC(config *config.Config, logger *zerolog.Logger) *TendermintRPC {
-	client, err := rpcClient.New(config.TendermintRPC)
+	client, err := rpcClient.New(config.TendermintRPC, "websocket")
 	if err != nil {
 		logger.Fatal().Err(err).Msg("Cannot instantiate Tendermint client")
 	}
